@@ -1,7 +1,4 @@
-FROM __BASEIMAGE_ARCH__/alpine:3.8
-MAINTAINER Pete Ward <peteward44@gmail.com>
-
-__CROSS_COPY qemu-__QEMU_ARCH__-static /usr/bin/
+FROM alpine:3.8
 
 RUN apk add --no-cache bash curl
 
@@ -26,5 +23,3 @@ RUN chmod o+rwx /tmp
 
 # run crond from busybox
 CMD /bin/bash /setup_env && crond -l 2 -f
-
-
