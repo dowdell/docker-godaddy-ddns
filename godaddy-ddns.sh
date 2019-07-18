@@ -1,7 +1,6 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SUCCESS_FILE=/tmp/status.success
-source $DIR/env.sh
 
 rm -f "$SUCCESS_FILE"
 
