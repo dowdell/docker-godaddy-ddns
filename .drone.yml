@@ -10,3 +10,11 @@ steps:
     password: { from_secret: docker_password }
     repo: nwd.me/ddns
     tags: [ latest ]
+- name: deploy
+  image: peloton/drone-rancher
+  settings:
+    url: http://node:8080/v1
+    access_key: { from_secret: rancher_access_key }
+    secret_key: { from_secret: rancher_secret_key }
+    service: edge/dynamic-dns
+    docker_image: nwd.me/ddns
